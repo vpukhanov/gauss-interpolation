@@ -91,19 +91,19 @@ namespace GaussInterpolation
             }
             if (displayInfo.drawPoly)
             {
-                plotModel.Series.Add(new FunctionSeries(interpolation.Pn, displayInfo.left, displayInfo.right, stepX, "Pₙ(x)"));
+                plotModel.Series.Add(new FunctionSeries(interpolation.VisualPn, displayInfo.left, displayInfo.right, stepX, "Pₙ(x)"));
             }
             if (displayInfo.drawRemainder)
             {
-                plotModel.Series.Add(new FunctionSeries(interpolation.Rn, displayInfo.left, displayInfo.right, stepX, "rₙ(x)"));
+                plotModel.Series.Add(new FunctionSeries(interpolation.VisualRn, displayInfo.left, displayInfo.right, stepX, "rₙ(x)"));
             }
             if (displayInfo.drawDF)
             {
-                plotModel.Series.Add(new FunctionSeries(interpolation.dF, displayInfo.left, displayInfo.right, stepX, "∂f(x)"));
+                plotModel.Series.Add(new FunctionSeries(interpolation.VisualDF, displayInfo.left, displayInfo.right, stepX, "∂f(x)"));
             }
             if (displayInfo.drawDPoly)
             {
-                plotModel.Series.Add(new FunctionSeries(interpolation.dPn, displayInfo.left, displayInfo.right, stepX, "∂Pₙ(x)"));
+                plotModel.Series.Add(new FunctionSeries(interpolation.VisualDPn, displayInfo.left, displayInfo.right, stepX, "∂Pₙ(x)"));
             }
 
             plotView.Model = plotModel;

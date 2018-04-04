@@ -84,7 +84,12 @@ namespace GaussInterpolation
         public double Pn(double x)
         {
             double t = (x - x0) / h;
-            double result = _Pn(t);
+            return _Pn(t);
+        }
+
+        public double VisualPn(double x)
+        {
+            double result = Pn(x);
             if (result > 1000)
             {
                 return 1000;
@@ -104,14 +109,65 @@ namespace GaussInterpolation
             return F(x) - Pn(x);
         }
 
+        public double VisualRn(double x)
+        {
+            double result = Rn(x);
+            if (result > 1000)
+            {
+                return 1000;
+            }
+            else if (result < -1000)
+            {
+                return -1000;
+            }
+            else
+            {
+                return result;
+            }
+        }
+
         public double dF(double x)
         {
             return (F(x + dx) - F(x)) / dx;
         }
 
+        public double VisualDF(double x)
+        {
+            double result = dF(x);
+            if (result > 1000)
+            {
+                return 1000;
+            }
+            else if (result < -1000)
+            {
+                return -1000;
+            }
+            else
+            {
+                return result;
+            }
+        }
+
         public double dPn(double x)
         {
             return (Pn(x + dx) - Pn(x)) / dx;
+        }
+
+        public double VisualDPn(double x)
+        {
+            double result = dPn(x);
+            if (result > 1000)
+            {
+                return 1000;
+            }
+            else if (result < -1000)
+            {
+                return -1000;
+            }
+            else
+            {
+                return result;
+            }
         }
     }
 }
